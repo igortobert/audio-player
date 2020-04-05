@@ -1,0 +1,88 @@
+<h1>Music Player</h1>
+
+<div class="player-container">
+  <div class="track-info">
+    <div class="img-container">
+      <img [src]="track.label"
+           alt="music-cover" />
+    </div>
+    <div class="track-title">{{ track.title | uppercase }}</div>
+  </div>
+  <div class="track-progress">
+    <div class="track-progress__time">
+      <div class="current-time"> {{ currentTime }} </div>
+      <div class="duration-time"> {{ duration }}</div>
+    </div>
+    <div class="progress-track-line"
+         #progressLine>
+      <div #progressBar
+           class="track-progress__bar"></div>
+    </div>
+  </div>
+  <div class="track-actions">
+    <audio [src]="track.file"
+           #audio></audio>
+
+    <button id="prev"
+            (click)="prevTrack()"
+            class="action-btn">
+            <img class="prev" src="/assets/svg/forward.svg" >
+    </button>
+    <button id="main" (click)="playPauseClick()"
+            class="action-btn action-btn-big"
+            [class.not-playing]="!isPlaying">
+            <img [src]="isPlaying ? '/assets/svg/pause.svg' : '/assets/svg/play.svg'" >
+    </button>
+    <button id="next"
+            (click)="nextTrack()"
+            class="action-btn">
+            <img src="/assets/svg/forward.svg" >
+    </button>
+  </div>
+
+</div>
+<!--
+<div class="music-container" [class.play]="isPlaying">
+  <div class="music-info">
+    <h4 id="title">{{ track.title | uppercase }}</h4>
+    <div class="progress-container"
+         id="progress-container">
+      <div #progressBar class="progress"
+           id="progress"></div>
+    </div>
+  </div>
+
+  <audio [src]="track.file"
+         #audio></audio>
+
+  <div class="img-container">
+    <img [src]="track.label"
+         alt="music-cover"
+         id="cover" />
+  </div>
+  <div class="navigation">
+    <button id="prev"
+            (click)="prevTrack()"
+            class="action-btn">
+      <i class="fas fa-backward"></i>
+    </button>
+    <button id="play"
+            *ngIf="!isPlaying"
+            (click)="play()"
+            class="action-btn action-btn-big">
+      <i class="fas fa-play"></i>
+    </button>
+    <button id="play"
+            *ngIf="isPlaying"
+            (click)="pause()"
+            class="action-btn action-btn-big">
+      <i class="fas fa-pause"></i>
+    </button>
+    <button id="next"
+            (click)="nextTrack()"
+            class="action-btn">
+      <i class="fas fa-forward"></i>
+    </button>
+  </div>
+</div>
+-->

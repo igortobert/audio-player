@@ -1,0 +1,100 @@
+h1 {
+  text-align: center;
+  color: #fff;
+}
+.track-title {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.track-actions {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  #prev {
+    padding: 0 7px 0 5px;
+  }
+  #next {
+    padding: 0 5px 0 7px;
+  }
+  #main {
+    padding: 10px;
+    &.not-playing {
+      padding-left: 12px;
+    }
+  }
+}
+
+.action-btn {
+  background-color: #fff;
+  border: 0;
+  color: #dfdbdf;
+  cursor: pointer;
+  margin: 0 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    width: 100%;
+  }
+
+  img.prev {
+    transform: rotate(180deg);
+  }
+}
+
+.action-btn.action-btn-big {
+  color: #cdc2d0;
+  width: 40px;
+  height: 40px;
+}
+
+.action-btn:focus {
+  outline: 0;
+}
+.img-container {
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    border-radius: 15px;
+  }
+}
+.track-progress__time {
+  display: flex;
+  justify-content: space-between;
+  & > * {
+    font-size: 10px;
+    color: #fff;
+  }
+}
+
+.progress-track-line {
+  background: #a3a3a3;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 3px 0 10px 0;
+  height: 4px;
+  width: 100%;
+}
+
+.track-progress__bar {
+  background-color: #fff;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
